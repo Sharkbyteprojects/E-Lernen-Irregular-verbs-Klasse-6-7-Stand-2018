@@ -1,5 +1,5 @@
 # E-Lernen-Irregular-verbs-Klasse-6-7-Stand-2018
-- [GITLAB](https://gitlab.com/Sharkbyteprojects/e-lernen-hilfe-2018)
+
 
 ---
 ## Releases: 
