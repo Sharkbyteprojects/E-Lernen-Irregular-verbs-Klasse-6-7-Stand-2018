@@ -118,7 +118,7 @@ public class GUI extends JFrame {
 				}else if(varv == 5){
 					count++;
 					stris = answer.getText();
-					if (stris.equals("flew")) {
+					if (stris.equals("got")) {
 						   answer.setText("Super, das hast du es Richtig");
 						   richt++;
 						}else {
