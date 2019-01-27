@@ -82,5 +82,24 @@
       </strelem>
     </fall>
   </strelem>
+  <strelem typ="0" zx="0" zy="0" textcolor="-16777216" bgcolor="-1">
+    <text>69;105;110;103;97;98;101;</text>
+  </strelem>
+  <strelem typ="1" zx="0" zy="0" textcolor="-16777216" bgcolor="-1">
+    <text>69;73;78;71;65;66;69;32;61;</text>
+    <fall fallname="100;114;97;119;110;">
+      <strelem typ="0" zx="0" zy="0" textcolor="-16777216" bgcolor="-1">
+        <text>82;105;99;104;116;105;103;</text>
+      </strelem>
+      <strelem typ="0" zx="0" zy="0" textcolor="-16777216" bgcolor="-1">
+        <text>114;105;99;104;116;105;103;43;43;</text>
+      </strelem>
+    </fall>
+    <fall fallname="83;111;110;115;116;105;103;101;115;">
+      <strelem typ="0" zx="0" zy="0" textcolor="-16777216" bgcolor="-1">
+        <text>70;97;108;115;99;104;</text>
+      </strelem>
+    </fall>
+  </strelem>
 </struktogramm>
 
