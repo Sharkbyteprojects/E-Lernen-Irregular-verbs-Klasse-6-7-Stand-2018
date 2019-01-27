@@ -6,10 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField quest;
 
 	/**
 	 * Launch the application.
@@ -31,12 +40,42 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
+		setFont(new Font("Arial", Font.PLAIN, 12));
+		setResizable(false);
+		setTitle("ENGLISCH IRREGULAR VERBS");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 156);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(new MigLayout("", "[grow]", "[][][][][]"));
+		
+		JLabel lblFrage = new JLabel("Frage");
+		contentPane.add(lblFrage, "cell 0 0");
+		
+		quest = new JTextField();
+		quest.setEditable(false);
+		contentPane.add(quest, "cell 0 1,growx");
+		quest.setColumns(10);
+		
+		JLabel lblAntwort = new JLabel("Antwort:");
+		contentPane.add(lblAntwort, "cell 0 2");
+		
+		textField = new JTextField();
+		contentPane.add(textField, "cell 0 3,growx");
+		textField.setColumns(10);
+		
+		JButton btnPrfe = new JButton("Pr\u00FCfe");
+		btnPrfe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (quest == "be") {
+					
+				}else {
+			      quest.setText("be");
+			      }
+			}
+		});
+		contentPane.add(btnPrfe, "cell 0 4,grow");
 	}
 
 }
