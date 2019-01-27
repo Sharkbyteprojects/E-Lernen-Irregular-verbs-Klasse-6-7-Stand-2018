@@ -16,6 +16,8 @@ import java.awt.event.ActionEvent;
 
 public class GUI extends JFrame {
     int varv = 0;
+    int richt = 0;
+    int count = 0;
 	private JPanel contentPane;
 	private JTextField answer;
 	private JTextField quest;
@@ -70,25 +72,65 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String stris;
 				if (varv == 1) {
+				count++;
 				stris = answer.getText();
 				if (stris.equals("was,were")) {
 				   answer.setText("Super, das hast du es Richtig");
+				   richt++;
 				}else {
 					answer.setText("Leider ist das die Falsche antwort");
 				}
 				quest.setText("come");
 				varv++;
 				}else if(varv == 2){
+					count++;
 					stris = answer.getText();
 					if (stris.equals("came")) {
 					   answer.setText("Super, das hast du es Richtig");
+					   richt++;
 					}else {
 						answer.setText("Leider ist das die Falsche antwort");
 					}
 					varv++;
 					quest.setText("build");
 				}else if(varv == 3){
-					
+					count++;
+					stris = answer.getText();
+					if (stris.equals("built")) {
+						   answer.setText("Super, das hast du es Richtig");
+						   richt++;
+						}else {
+							answer.setText("Leider ist das die Falsche antwort");
+						}
+						varv++;
+						quest.setText("fly");
+				}else if(varv == 4){
+					count++;
+					stris = answer.getText();
+					if (stris.equals("flew")) {
+						   answer.setText("Super, das hast du es Richtig");
+						   richt++;
+						}else {
+							answer.setText("Leider ist das die Falsche antwort");
+						}
+						varv++;
+						quest.setText("get");
+				}else if(varv == 5){
+					count++;
+					stris = answer.getText();
+					if (stris.equals("flew")) {
+						   answer.setText("Super, das hast du es Richtig");
+						   richt++;
+						}else {
+							answer.setText("Leider ist das die Falsche antwort");
+						}
+						varv++;
+						quest.setText("Alle Fragen Durchgespielt!");
+						answer.setEditable(false);
+						btnPrfe.setText("Zeige Ergebnis");
+				}else if(varv == 6){
+					btnPrfe.setEnabled(false);
+					answer.setText("Du hast " + richt + " von " + count + " Richtig");
 				}else {
 			      quest.setText("be | (ANTWORT KLEINSCHREIBEN, kommagetrennt)");
 			      varv++;
