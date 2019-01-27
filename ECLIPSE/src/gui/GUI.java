@@ -15,9 +15,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class GUI extends JFrame {
-
+    int varv = 0;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField answer;
 	private JTextField quest;
 
 	/**
@@ -61,18 +61,39 @@ public class GUI extends JFrame {
 		JLabel lblAntwort = new JLabel("Antwort:");
 		contentPane.add(lblAntwort, "cell 0 2");
 		
-		textField = new JTextField();
-		contentPane.add(textField, "cell 0 3,growx");
-		textField.setColumns(10);
+		answer = new JTextField();
+		contentPane.add(answer, "cell 0 3,growx");
+		answer.setColumns(10);
 		
-		JButton btnPrfe = new JButton("Pr\u00FCfe");
+		JButton btnPrfe = new JButton("Starte");
 		btnPrfe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (quest == "be") {
+				String stris;
+				if (varv == 1) {
+				stris = answer.getText();
+				if (stris.equals("was,were")) {
+				   answer.setText("Super, das hast du es Richtig");
+				}else {
+					answer.setText("Leider ist das die Falsche antwort");
+				}
+				quest.setText("come");
+				varv++;
+				}else if(varv == 2){
+					stris = answer.getText();
+					if (stris.equals("came")) {
+					   answer.setText("Super, das hast du es Richtig");
+					}else {
+						answer.setText("Leider ist das die Falsche antwort");
+					}
+					varv++;
+					quest.setText("build");
+				}else if(varv == 3){
 					
 				}else {
-			      quest.setText("be");
-			      }
+			      quest.setText("be | (ANTWORT KLEINSCHREIBEN, kommagetrennt)");
+			      varv++;
+			      btnPrfe.setText("Pr\u00FCfe");
+			    }
 			}
 		});
 		contentPane.add(btnPrfe, "cell 0 4,grow");
