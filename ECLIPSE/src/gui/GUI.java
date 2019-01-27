@@ -21,6 +21,8 @@ public class GUI extends JFrame {
 	private JPanel contentPane;
 	private JTextField answer;
 	private JTextField quest;
+	private JTextField outpu;
+	private JLabel lblOutput;
 
 	/**
 	 * Launch the application.
@@ -46,11 +48,11 @@ public class GUI extends JFrame {
 		setResizable(false);
 		setTitle("ENGLISCH IRREGULAR VERBS");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 194);
+		setBounds(100, 100, 450, 215);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[grow]", "[][][][][]"));
+		contentPane.setLayout(new MigLayout("", "[grow]", "[][][][][][][]"));
 		
 		JLabel lblFrage = new JLabel("Frage");
 		contentPane.add(lblFrage, "cell 0 0");
@@ -86,10 +88,10 @@ public class GUI extends JFrame {
 					count++;
 					stris = answer.getText();
 					if (stris.equals("came")) {
-					   answer.setText("Super, das hast du es Richtig");
+						outpu.setText("Super, das hast du es Richtig");
 					   richt++;
 					}else {
-						answer.setText("Leider ist das die Falsche antwort");
+						outpu.setText("Leider ist das die Falsche antwort");
 					}
 					varv++;
 					quest.setText("build");
@@ -97,10 +99,10 @@ public class GUI extends JFrame {
 					count++;
 					stris = answer.getText();
 					if (stris.equals("built")) {
-						   answer.setText("Super, das hast du es Richtig");
+						   outpu.setText("Super, das hast du es Richtig");
 						   richt++;
 						}else {
-							answer.setText("Leider ist das die Falsche antwort");
+							outpu.setText("Leider ist das die Falsche antwort");
 						}
 						varv++;
 						quest.setText("fly");
@@ -108,10 +110,10 @@ public class GUI extends JFrame {
 					count++;
 					stris = answer.getText();
 					if (stris.equals("flew")) {
-						   answer.setText("Super, das hast du es Richtig");
+						   outpu.setText("Super, das hast du es Richtig");
 						   richt++;
 						}else {
-							answer.setText("Leider ist das die Falsche antwort");
+							outpu.setText("Leider ist das die Falsche antwort");
 						}
 						varv++;
 						quest.setText("get");
@@ -119,10 +121,10 @@ public class GUI extends JFrame {
 					count++;
 					stris = answer.getText();
 					if (stris.equals("got")) {
-						   answer.setText("Super, das hast du es Richtig");
+						   outpu.setText("Super, das hast du es Richtig");
 						   richt++;
 						}else {
-							answer.setText("Leider ist das die Falsche antwort");
+							outpu.setText("Leider ist das die Falsche antwort");
 						}
 						varv++;
 						quest.setText("Alle Fragen Durchgespielt!");
@@ -130,7 +132,8 @@ public class GUI extends JFrame {
 						btnPrfe.setText("Zeige Ergebnis");
 				}else if(varv == 6){
 					btnPrfe.setEnabled(false);
-					answer.setText("Du hast " + richt + " von " + count + " Richtig");
+					answer.setText(" ");
+					outpu.setText("Du hast " + richt + " von " + count + " Richtig");
 				}else {
 			      quest.setText("be | (ANTWORT KLEINSCHREIBEN, kommagetrennt)");
 			      varv++;
@@ -139,6 +142,14 @@ public class GUI extends JFrame {
 			}
 		});
 		contentPane.add(btnPrfe, "cell 0 4,grow");
+		
+		lblOutput = new JLabel("Output");
+		contentPane.add(lblOutput, "cell 0 5");
+		
+		outpu = new JTextField();
+		outpu.setEditable(false);
+		contentPane.add(outpu, "cell 0 6,growx");
+		outpu.setColumns(10);
 	}
 
 }
