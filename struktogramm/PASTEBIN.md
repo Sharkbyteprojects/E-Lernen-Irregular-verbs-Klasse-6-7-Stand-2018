@@ -1,0 +1,1 @@
+[GO TO PASTEBIN](https://pastebin.com/AzxB2R9k)
